@@ -96,7 +96,7 @@ pk_lm_fit <- linear_reg() |>
 
 pk_lm_fit
 pk_lm_fit$fit
-
+summary(pk_lm_fit$fit)
 
 # Boosted Regression Looking for sp_attack
 pk_boost_reg_fit <- boost_tree() |>
