@@ -1,0 +1,49 @@
+```{r}
+## read in Data
+getwd() # get working directory
+pokedata <- read.csv("Labs/pokemon.csv")
+pokedata
+```
+
+# Filter Section
+
+```{r}
+filter(pokedata, weight_kg < 100)
+filter(pokedata, type1 == "grass")
+```
+
+# Select Section
+
+```{r}
+filter(pokedata, weight_kg < 100)
+filter(pokedata, type1 == "grass")
+```
+
+# Mutate Section
+
+```{r}
+mutate(pokedata,
+       lbs = weight_kg*2.2)
+mutate(pokedata,
+       sum = sum(weight_kg, na.rm = T))
+```
+
+# Summarize Section
+
+```{r}
+summarize(pokedata,
+          mean_weight = mean(weight_kg, na.rm = T),
+          count = n(),
+          .by = name)
+summarize(pokedata,
+          mean_speed = mean(speed, na.rm = T),
+          count = n(),
+          .by = name)
+```
+
+# Arrange Section
+
+```{r}
+arrange(pokedata, name)
+arrange(pokedata, desc(sp_attack))
+```

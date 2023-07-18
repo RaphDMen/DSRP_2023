@@ -1,0 +1,12 @@
+```{r plot, echo = F}
+# this is a comment
+library(ggplot2)
+
+ggplot(data = mpg, aes(x = hwy)) + geom_density()
+```
+
+**Add Lines Between The Chunks:**
+
+```{r}
+
+```
