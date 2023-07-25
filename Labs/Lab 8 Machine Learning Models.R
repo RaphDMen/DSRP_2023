@@ -105,6 +105,8 @@ pk_boost_reg_fit <- boost_tree() |>
   fit(sp_attack ~ ., data = pk_reg_train)
 
 pk_boost_reg_fit
+pk_boost_reg_fit$fit
+summary(pk_boost_reg_fit$fit)
 boost_fit$fit$evaluation_log
 pk_boost_reg_fit$fit$evaluation_log
 
@@ -112,10 +114,12 @@ pk_boost_reg_fit$fit$evaluation_log
 
 
 #Step 8: ####
-#Linear Regression
 pk_reg_results <- pk_reg_test
 
+#Linear Regression
 pk_reg_results$lm_pred <- predict(pk_lm_fit, pk_reg_test)$.pred
+
+#Boosted Tree Regression
 pk_reg_results$boost_pred <- predict(pk_boost_reg_fit, pk_reg_test)$.pred
 
 #means
